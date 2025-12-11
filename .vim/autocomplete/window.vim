@@ -128,7 +128,11 @@ function MenuTab()
 	if g:Line < 0
 		return ""
 	endif
-	return (g:options[g:Line])[len(g:word):]
+	if g:Line == 0
+		return (g:options[g:Line])[len(g:word):]
+	endif
+	return
+		return (g:options[g:Line-1])[len(g:word):]
 endfunction
 
 let g:wind = ""
